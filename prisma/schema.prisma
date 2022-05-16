@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Classification{
+  id Int @id @default(autoincrement())
+  name String @unique
+  catalogue Catalogue[]
+
+  @@map("classification")
+}
+
+model Category{
+  id Int @id @default(autoincrement())
+  name String @unique
+  catalogue Catalogue[]
+
+  @@map("category")
+}
+
+model City{
+  id Int @id @default(autoincrement())
+  name String @unique
+  statecity StateCity[]
+
+  @@map("city")
+}
+
+model State{
+  id Int @id @default(autoincrement())
+  name String @unique
+  statecity StateCity[]
+
+  @@map("state")
+}
+
+model Tag{
+  id Int @id @default(autoincrement())
+  name String @unique
+  catalogue Catalogue[]
+
+  @@map("tag")
+}
+
+model StateCity{
+  id Int @id @default(autoincrement())
+  state State @relation(fields: [stateId], references: [id])
+  stateId Int
+  city City @relation(fields: [cityId], references: [id])
+  cityId Int
+  catalogue Catalogue[]
+
+  @@map("statecity")
+}
+
+model Catalogue{
+  id Int @id @default(autoincrement())
+  name String 
+  tag Tag @relation(fields: [tagId], references: [id])
+  tagId Int
+  category  Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
+  date String
+  statecity StateCity @relation(fields: [statecityId], references: [id])
+  statecityId Int
+  sinopse String
+  image String
+  price String
+  adress String
+  classification Classification @relation(fields: [classificationId], references: [id])
+  classificationId Int
+  duration String
+  hour String
+  link String
+
+  @@map("catalogue")
+}
