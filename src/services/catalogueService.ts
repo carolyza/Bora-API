@@ -16,8 +16,6 @@ async function createArt(
   pg: number,
   duration: string,
   tags: number,
-  date: any,
-  hour: string,
   link: string
 ) {
   const { id: statecityId } = await cityRepository.findStateCity(city, state);
@@ -26,7 +24,6 @@ async function createArt(
     name,
     tagId: tags,
     categoryId: category,
-    date,
     statecityId,
     sinopse,
     image,
@@ -34,7 +31,6 @@ async function createArt(
     adress,
     classificationId: pg,
     duration,
-    hour,
     link,
   };
 

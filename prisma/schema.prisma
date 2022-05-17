@@ -68,7 +68,6 @@ model Catalogue{
   tagId Int
   category  Category @relation(fields: [categoryId], references: [id])
   categoryId Int
-  date String
   statecity StateCity @relation(fields: [statecityId], references: [id])
   statecityId Int
   sinopse String
@@ -78,7 +77,6 @@ model Catalogue{
   classification Classification @relation(fields: [classificationId], references: [id])
   classificationId Int
   duration String
-  hour String
   link String
 
   @@map("catalogue")

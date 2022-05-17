@@ -6,7 +6,6 @@ async function createArt(req: Request, res: Response) {
     name,
     tags,
     category,
-    date,
     state,
     city,
     sinopse,
@@ -15,14 +14,12 @@ async function createArt(req: Request, res: Response) {
     adress,
     pg,
     duration,
-    hour,
     link,
   } = req.body;
   await catalogueService.createArt(
     name,
     tags,
     category,
-    date,
     state,
     city,
     sinopse,
@@ -31,7 +28,6 @@ async function createArt(req: Request, res: Response) {
     adress,
     pg,
     duration,
-    hour,
     link
   );
   res.sendStatus(201);
