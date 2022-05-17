@@ -6,23 +6,23 @@ import { Catalogue } from "@prisma/client";
 
 async function createArt(
   name: string,
-  image: string,
+  tag: number,
   category: number,
-  sinopse: string,
   state: number,
   city: number,
+  sinopse: string,
+  image: string,
   price: string,
   adress: string,
   pg: number,
   duration: string,
-  tags: number,
   link: string
 ) {
   const { id: statecityId } = await cityRepository.findStateCity(city, state);
 
   const data = {
     name,
-    tagId: tags,
+    tagId: tag,
     categoryId: category,
     statecityId,
     sinopse,

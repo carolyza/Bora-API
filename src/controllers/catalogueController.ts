@@ -4,7 +4,7 @@ import catalogueService from "../services/catalogueService.js";
 async function createArt(req: Request, res: Response) {
   const {
     name,
-    tags,
+    tag,
     category,
     state,
     city,
@@ -16,9 +16,10 @@ async function createArt(req: Request, res: Response) {
     duration,
     link,
   } = req.body;
+
   await catalogueService.createArt(
     name,
-    tags,
+    tag,
     category,
     state,
     city,
