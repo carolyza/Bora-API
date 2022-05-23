@@ -1,15 +1,15 @@
 import { prisma } from "../database.js";
 
-async function findFeminist(formData: any) {
+async function findBlack(formData: any) {
   return prisma.catalogue.findFirst({
     where: {
       id: formData.sessions,
       statecity: formData.stateCityId,
-      subcategoryId: 1,
+      subcategoryId: 2,
     },
   });
 }
 
 export default {
-  findFeminist,
+  findBlack,
 };

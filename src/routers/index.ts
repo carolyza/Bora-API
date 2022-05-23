@@ -12,6 +12,7 @@ import theaterRouter from "./theaterRouter.js";
 import tagsArtRouter from "./tagsArtRouter.js";
 import pgRouter from "./pgRouter.js";
 import feministRouter from "./feministRouter.js";
+import blackArtRouter from "./blackArtRouter.js";
 
 const router = Router();
 router.use(categoryRouter);
@@ -27,5 +28,6 @@ router.use(theaterRouter);
 router.use(tagsArtRouter);
 router.use(pgRouter);
 router.use(feministRouter);
+router.use(blackArtRouter);
 
 export default router;
