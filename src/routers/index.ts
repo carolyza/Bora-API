@@ -13,6 +13,9 @@ import tagsArtRouter from "./tagsArtRouter.js";
 import pgRouter from "./pgRouter.js";
 import feministRouter from "./feministRouter.js";
 import blackArtRouter from "./blackArtRouter.js";
+import LgbtRouter from "./LgbtRouter.js";
+import danceRouter from "./danceRouter.js";
+import expoRouter from "./expoRouter.js";
 
 const router = Router();
 router.use(categoryRouter);
@@ -29,5 +32,7 @@ router.use(tagsArtRouter);
 router.use(pgRouter);
 router.use(feministRouter);
 router.use(blackArtRouter);
-
+router.use(LgbtRouter);
+router.use(danceRouter);
+router.use(expoRouter);
 export default router;

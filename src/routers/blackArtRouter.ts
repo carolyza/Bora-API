@@ -4,6 +4,6 @@ import blackArtController from "../controllers/blackArtController.js";
 
 const blackArtRouter = Router();
 
-blackArtRouter.post("/feminista", blackArtController.findBlack);
+blackArtRouter.post("/artepreta", blackArtController.findBlack);
 
 export default blackArtRouter;
