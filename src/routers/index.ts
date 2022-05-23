@@ -9,6 +9,8 @@ import subcategoryRouter from "./subcategoryRouter.js";
 import sessionsRouter from "./sessionsRouter.js";
 import sessionRouter from "./sessionRouter.js";
 import theaterRouter from "./theaterRouter.js";
+import tagsArtRouter from "./tagsArtRouter.js";
+import pgRouter from "./pgRouter.js";
 
 const router = Router();
 router.use(categoryRouter);
@@ -21,5 +23,7 @@ router.use(subcategoryRouter);
 router.use(sessionsRouter);
 router.use(sessionRouter);
 router.use(theaterRouter);
+router.use(tagsArtRouter);
+router.use(pgRouter);
 
 export default router;

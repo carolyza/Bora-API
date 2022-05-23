@@ -7,5 +7,8 @@ import sessionsController from "../controllers/sessionsController.js";
 const sessionsRouter = Router();
 
 sessionsRouter.post("/sessoes", sessionsController.createSessions);
-
+sessionsRouter.get(
+  "/sessoes/sessao/:sessionId",
+  sessionsController.findSessions
+);
 export default sessionsRouter;

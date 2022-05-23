@@ -9,6 +9,18 @@ async function insert(createData: any) {
   });
 }
 
+async function findSession(date: any) {
+  return prisma.session.findMany({
+    where: {
+      date: date,
+    },
+    select: {
+      id: true,
+    },
+  });
+}
+
 export default {
   insert,
+  findSession,
 };

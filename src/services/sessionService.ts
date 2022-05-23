@@ -9,6 +9,14 @@ async function createSession(createData: any) {
   return session.id;
 }
 
+async function findSession(formData) {
+  const data = {
+    formData,
+  };
+  return sessionRepository.findSession(data);
+}
+
 export default {
   createSession,
+  findSession,
 };

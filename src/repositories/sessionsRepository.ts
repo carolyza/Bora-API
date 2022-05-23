@@ -7,6 +7,18 @@ async function insert(formData: any) {
   });
 }
 
+async function findSessions(sessionId: any) {
+  return prisma.sessions.findFirst({
+    where: {
+      sessionId: sessionId,
+    },
+    select: {
+      catalogueId: true,
+    },
+  });
+}
+
 export default {
   insert,
+  findSessions,
 };

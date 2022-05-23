@@ -8,6 +8,13 @@ async function createSession(req: Request, res: Response) {
   res.status(201).send({ id });
 }
 
+async function findSession(req: Request, res: Response) {
+  const { date } = req.body;
+  const sessionId = await sessionService.findSession(date);
+  res.send({ sessionId });
+}
+
 export default {
   createSession,
+  findSession,
 };

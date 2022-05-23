@@ -12,6 +12,11 @@ async function createSessions(sessionId: any, catalogueId: number) {
   await sessionsRepository.insert(data);
 }
 
+async function findSessions(sessionId: any) {
+  return sessionsRepository.findSessions(sessionId);
+}
+
 export default {
   createSessions,
+  findSessions,
 };

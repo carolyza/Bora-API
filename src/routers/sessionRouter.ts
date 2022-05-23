@@ -7,5 +7,5 @@ import sessionController from "../controllers/sessionController.js";
 const sessionRouter = Router();
 
 sessionRouter.post("/sessao", sessionController.createSession);
-
+sessionRouter.get("/sessao", sessionController.findSession);
 export default sessionRouter;
