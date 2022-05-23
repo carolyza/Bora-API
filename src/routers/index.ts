@@ -11,6 +11,7 @@ import sessionRouter from "./sessionRouter.js";
 import theaterRouter from "./theaterRouter.js";
 import tagsArtRouter from "./tagsArtRouter.js";
 import pgRouter from "./pgRouter.js";
+import feministRouter from "./feministRouter.js";
 
 const router = Router();
 router.use(categoryRouter);
@@ -25,5 +26,6 @@ router.use(sessionRouter);
 router.use(theaterRouter);
 router.use(tagsArtRouter);
 router.use(pgRouter);
+router.use(feministRouter);
 
 export default router;

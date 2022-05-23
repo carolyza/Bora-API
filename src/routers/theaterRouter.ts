@@ -4,6 +4,6 @@ import theaterController from "../controllers/theaterController.js";
 
 const theaterRouter = Router();
 
-theaterRouter.get("/teatro", theaterController.findTheater);
+theaterRouter.post("/teatro", theaterController.findTheater);
 
 export default theaterRouter;
