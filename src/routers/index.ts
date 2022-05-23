@@ -16,6 +16,8 @@ import blackArtRouter from "./blackArtRouter.js";
 import LgbtRouter from "./LgbtRouter.js";
 import danceRouter from "./danceRouter.js";
 import expoRouter from "./expoRouter.js";
+import eventRouter from "./eventRouter.js";
+import showRouter from "./showRouter.js";
 
 const router = Router();
 router.use(categoryRouter);
@@ -35,4 +37,6 @@ router.use(blackArtRouter);
 router.use(LgbtRouter);
 router.use(danceRouter);
 router.use(expoRouter);
+router.use(eventRouter);
+router.use(showRouter);
 export default router;
