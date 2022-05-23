@@ -5,6 +5,10 @@ import tagRouter from "./tagRouter.js";
 import classificationRouter from "./classificationRouter.js";
 import cityRouter from "./cityRouter.js";
 import catalogueRouter from "./catalogueRouter.js";
+import subcategoryRouter from "./subcategoryRouter.js";
+import sessionsRouter from "./sessionsRouter.js";
+import sessionRouter from "./sessionRouter.js";
+import theaterRouter from "./theaterRouter.js";
 
 const router = Router();
 router.use(categoryRouter);
@@ -13,5 +17,9 @@ router.use(tagRouter);
 router.use(classificationRouter);
 router.use(cityRouter);
 router.use(catalogueRouter);
+router.use(subcategoryRouter);
+router.use(sessionsRouter);
+router.use(sessionRouter);
+router.use(theaterRouter);
 
 export default router;

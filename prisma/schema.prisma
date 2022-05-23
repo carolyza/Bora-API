@@ -26,6 +26,14 @@ model Category{
   @@map("category")
 }
 
+model SubCategory{
+  id Int @id @default(autoincrement())
+  name String @unique
+  catalogue Catalogue[]
+
+  @@map("subcategory")
+}
+
 model City{
   id Int @id @default(autoincrement())
   name String @unique
@@ -45,9 +53,16 @@ model State{
 model Tag{
   id Int @id @default(autoincrement())
   name String @unique
-  catalogue Catalogue[]
-
+tagsart TagsArt[] @relation(references: [id])
   @@map("tag")
+}
+
+model TagsArt{
+id Int @id @default(autoincrement())
+tag Tag[] @relation(references: [id])
+catalogue Catalogue[]
+
+@@map("tagsart")
 }
 
 model StateCity{
@@ -61,13 +76,36 @@ model StateCity{
   @@map("statecity")
 }
 
+model Sessions{
+  id Int @id @default(autoincrement())
+  
+  sessionId Int
+  
+  catalogueId Int
+
+  @@map("sessions")
+}
+
+model Session{
+  id Int @id @default(autoincrement())
+  date String
+  hour String
+  
+
+  @@map("session")
+}
+
+
+
 model Catalogue{
   id Int @id @default(autoincrement())
   name String 
-  tag Tag @relation(fields: [tagId], references: [id])
-  tagId Int
+  tagsart TagsArt @relation(fields: [tagsartId], references: [id])
+  tagsartId Int
   category  Category @relation(fields: [categoryId], references: [id])
   categoryId Int
+  subcategory  SubCategory @relation(fields: [subcategoryId], references: [id])
+  subcategoryId Int
   statecity StateCity @relation(fields: [statecityId], references: [id])
   statecityId Int
   sinopse String
@@ -78,6 +116,8 @@ model Catalogue{
   classificationId Int
   duration String
   link String
+
+  
 
   @@map("catalogue")
 }

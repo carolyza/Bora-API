@@ -5,5 +5,7 @@ import tagController from "../controllers/tagController.js";
 const tagRouter = Router();
 
 tagRouter.get("/tags", tagController.findMany);
+tagRouter.post("/tagsArt", tagController.postTag);
+tagRouter.patch("/tagsArt/:id", tagController.patchTag);
 
 export default tagRouter;

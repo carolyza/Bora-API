@@ -1,13 +1,15 @@
 import catalogueRepository from "../repositories/catalogueRepository.js";
 import cityRepository from "../repositories/cityRepository.js";
 import { Catalogue } from "@prisma/client";
+import subcategory from "./subcategory.js";
 
 //export type CreateData = Omit<Catalogue, "id">;
 
 async function createArt(
   name: string,
-  tag: number,
+  tagsartId: any,
   category: number,
+  subcategory: number,
   state: number,
   city: number,
   sinopse: string,
@@ -22,8 +24,9 @@ async function createArt(
 
   const data = {
     name,
-    tagId: tag,
+    tagsartId: tagsartId,
     categoryId: category,
+    subcategoryId: subcategory,
     statecityId,
     sinopse,
     image,
@@ -34,7 +37,8 @@ async function createArt(
     link,
   };
 
-  await catalogueRepository.insert(data);
+  const catalogueId = await catalogueRepository.insert(data);
+  return catalogueId.id;
 }
 
 export default {
